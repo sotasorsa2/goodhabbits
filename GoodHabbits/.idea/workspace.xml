@@ -19,18 +19,21 @@
     <list default="true" id="494139cb-8e6d-4764-8ffb-96d6c2135521" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/DayActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/DayActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/StartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/StartActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/bedtime_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/bedtime_activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/night_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/night_activity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/stat_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/stat_activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< Updated upstream
   <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/otsosalmenpera/.android/avd/Pixel_5_API_32.avd]" />
+=======
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[C:\Users\Hasan\.android\avd\Pixel_3_API_30.avd]" />
+>>>>>>> Stashed changes
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -63,6 +66,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="2895vEv0OQFHJdj8XJSntyAJgmz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -75,7 +79,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WORKMANAGER_INSPECTOR_NOTIFICATION_DISMISSED" value="true" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MySleepTrackerMain" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.103568595">
