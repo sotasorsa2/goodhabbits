@@ -24,6 +24,10 @@
         <activity
             android:name=".SleepActivity"
             android:exported="false" />
+
+        <activity android:name=".DayActivity"
+            android:exported="false"
+            />
         <activity
             android:name=".MainActivity"
             android:exported="true">

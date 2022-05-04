@@ -26,13 +26,13 @@ public class DayActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_day);
 
 
 
         //setting up current date
         timeday = findViewById(R.id.timeday);
-        Date currentlyDate = new Date();
+        Date currentlyDate = new Date(System.currentTimeMillis());
         String stringDate = DateFormat.getDateInstance().format(currentlyDate);
         timeday.setText(stringDate);
 

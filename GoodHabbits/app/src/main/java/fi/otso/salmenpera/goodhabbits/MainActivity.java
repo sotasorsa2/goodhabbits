@@ -18,4 +18,16 @@ public class MainActivity extends AppCompatActivity {
         Intent nextActivity = new Intent(MainActivity.this, WaterActivity.class);
         startActivity(nextActivity);
     }
+
+
+    public void enterBedTimeGoal(View v) {
+        Intent nextActivity = new Intent(MainActivity.this, DayActivity.class);
+        startActivity(nextActivity);
+    }
+
+
+    public void enterMeditaionGoal(View v) {
+        Intent nextActivity3 = new Intent(MainActivity.this, MeditationActitivy.class);
+        startActivity(nextActivity3);
+    }
 }
