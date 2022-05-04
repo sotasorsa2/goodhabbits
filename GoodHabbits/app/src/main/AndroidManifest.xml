@@ -29,6 +29,10 @@
             android:exported="false"
             />
         <activity android:name=".night_activity"
+            android:exported="false"
+            />
+        <activity android:name=".stat_activity"
+            android:exported="false"
             />
         <activity
             android:name=".MainActivity"

@@ -25,20 +25,16 @@ public class stat_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stat);
-
         percentageAnalys = findViewById(R.id.progress_circularPercentage);
         progressBar = findViewById(R.id.progress_circular);
-
         initUI();
         getStatus();
-
-
         backToHome = findViewById(R.id.backtohome);
         backToHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent backToMainActivity = new Intent(stat_activity.this, DayActivity.class);
+                Intent backToMainActivity = new Intent(stat_activity.this, MainActivity.class);
                 startActivity(backToMainActivity);
             }
         });
@@ -92,9 +88,6 @@ public class stat_activity extends AppCompatActivity {
         }
 
     }
-
-
-
     public void initUI(){
         dateStat = findViewById(R.id.datestat);
         wentToSleep = findViewById(R.id.wenttosleep);
