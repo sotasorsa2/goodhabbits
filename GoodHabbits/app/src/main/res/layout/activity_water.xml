@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080c24"
+    tools:context=".WaterActivity">
+
+    <TextView
+        android:id="@+id/appTitleText3"
+        android:layout_width="250dp"
+        android:layout_height="41dp"
+        android:fontFamily="@font/manrope_bold"
+        android:text="Hydration Analysis"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/relativeLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.941" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout3"
+        android:layout_width="411dp"
+        android:layout_height="550dp"
+        android:layout_marginStart="33dp"
+        android:layout_marginEnd="33dp"
+        android:background="@drawable/water_goal_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ProgressBar
+            android:id="@+id/waterProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/circular_shape"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/percentageText"
+            android:layout_width="87dp"
+            android:layout_height="33dp"
+            android:layout_below="@+id/waterProgressBar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="163dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="317dp"
+            android:fontFamily="@font/manrope_bold"
+            android:text="100%"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btnAdd250Ml"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="185dp"
+            android:background="@null"
+            android:onClick="add250ml"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/btn_add_250" />
+
+        <ImageButton
+            android:id="@+id/btnAdd500Ml"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="155dp"
+            android:layout_marginBottom="185dp"
+            android:background="@null"
+            android:onClick="add500ml"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/btn_add_500" />
+
+        <ImageButton
+            android:id="@+id/btnAdd1000Ml"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="280dp"
+            android:layout_marginBottom="185dp"
+            android:background="@null"
+            android:onClick="add1000ml"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/btn_add_1000" />
+
+        <ImageButton
+            android:id="@+id/btnAdd1000Ml2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="279dp"
+            android:layout_marginBottom="110dp"
+            android:background="@null"
+            android:onClick="addCustomWater"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/add_water_btn" />
+
+        <EditText
+            android:id="@+id/editTextWaterAmount"
+            android:layout_width="185dp"
+            android:layout_height="57dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginBottom="110dp"
+            android:background="@drawable/edittext_bg"
+            android:ems="10"
+            android:fontFamily="@font/manrope_bold"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/dailyGoalWaterText"
+            android:layout_width="310dp"
+            android:layout_height="73dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginBottom="7dp"
+            android:fontFamily="@font/manrope_bold"
+            android:text="TextView"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/waterImage"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="169dp"
+            app:srcCompat="@drawable/water_half" />
+
+        <ImageButton
+            android:id="@+id/historyButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@null"
+            android:onClick="loadWaterListActivity"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/history2" />
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
