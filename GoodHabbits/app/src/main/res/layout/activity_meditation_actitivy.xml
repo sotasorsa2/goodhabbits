@@ -6,4 +6,75 @@
     android:layout_height="match_parent"
     tools:context=".MeditationActitivy">
 
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="228dp"
+        android:onClick="onClick"
+        android:text="stop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524" />
+
+    <TextView
+        android:id="@+id/ins"
+        android:layout_width="124dp"
+        android:layout_height="57dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="268dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Press start"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:onClick="onClick"
+        android:text="Strat"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.524" />
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="123dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="172dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="TextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/over"
+        android:layout_width="167dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="168dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="exerice is over"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TIMES"
+        android:layout_width="109dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:fontFamily="@font/manrope_bold"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
