@@ -1,4 +1,4 @@
-package com.example.mysleeptracker;
+package fi.otso.salmenpera.goodhabbits;
 
 import androidx.appcompat.app.AppCompatActivity;
 

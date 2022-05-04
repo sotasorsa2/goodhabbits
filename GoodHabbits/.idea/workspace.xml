@@ -17,15 +17,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="494139cb-8e6d-4764-8ffb-96d6c2135521" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/DayActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/DayActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/StartActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/StartActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/bedtime_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/bedtime_activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/night_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/night_activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/stat_activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/otso/salmenpera/goodhabbits/stat_activity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
