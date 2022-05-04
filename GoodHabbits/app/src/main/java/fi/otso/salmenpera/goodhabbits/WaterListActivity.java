@@ -44,4 +44,9 @@ public class WaterListActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void goBack(View v) {
+        Intent nextActivity = new Intent(WaterListActivity.this, WaterActivity.class);
+        startActivity(nextActivity);
+    }
 }

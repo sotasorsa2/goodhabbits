@@ -220,6 +220,11 @@ public class WaterActivity extends AppCompatActivity {
         return result;
     }
 
+    public void goBack(View v) {
+        Intent nextActivity = new Intent(WaterActivity.this, MainActivity.class);
+        startActivity(nextActivity);
+    }
+
     //Load activity for previous water goals
     public void loadWaterListActivity(View v) {
         Intent nextActivity = new Intent(WaterActivity.this, WaterListActivity.class);
