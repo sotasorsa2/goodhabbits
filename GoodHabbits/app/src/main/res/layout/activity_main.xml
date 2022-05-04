@@ -101,7 +101,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:onClick="enterMeditaionGoal"
-            android:text="MEDITAION GOAL"
+            android:text="MEDITATION GOAL"
             app:layout_constraintBottom_toTopOf="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.262"
