@@ -2,6 +2,7 @@ package fi.otso.salmenpera.goodhabbits;
 
 
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
@@ -66,7 +67,7 @@ public class MeditationActitivy extends AppCompatActivity {
             long millis = System.currentTimeMillis() - startTime;
             int seconds = (int) (millis / 1000);
             int minutes = seconds / 60;
-            int counter = 0;
+
 
 
 
@@ -157,14 +158,18 @@ public class MeditationActitivy extends AppCompatActivity {
             times++;
 
 
+
+
         }
         if(v.getId() == R.id.stop) {
             onPause();
+        }
+        if(v.getId() == R.id.Back) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
 
 
-
-
-}
 
     }
 

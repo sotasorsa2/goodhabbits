@@ -2,53 +2,78 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/back"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/rin_background"
     tools:context=".MeditationActitivy">
 
     <Button
-        android:id="@+id/stop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="228dp"
+        android:id="@+id/Back"
+        style="@style/buttonbreath"
+        android:layout_width="138dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="140dp"
         android:onClick="onClick"
-        android:text="stop"
+        android:text="Back"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524" />
+        app:layout_constraintVertical_bias="0.887" />
 
-    <TextView
-        android:id="@+id/ins"
-        android:layout_width="124dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="268dp"
-        android:gravity="center|center_horizontal|center_vertical"
-        android:text="Press start"
+    <Button
+        android:id="@+id/stop"
+        style="@style/buttonbreath"
+        android:layout_width="138dp"
+        android:layout_height="71dp"
+        android:onClick="onClick"
+        android:text="stop"
+        android:textSize="28sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705" />
 
     <Button
         android:id="@+id/start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
+        style="@style/buttonbreath"
+        android:layout_width="138dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="40dp"
         android:onClick="onClick"
-        android:text="Strat"
+        android:text="start"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.524" />
+        app:layout_constraintVertical_bias="0.706" />
+
+    <TextView
+        android:id="@+id/ins"
+        android:layout_width="157dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="296dp"
+        android:fontFamily="@font/manrope_bold"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="Press start"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/count"
-        android:layout_width="123dp"
-        android:layout_height="74dp"
-        android:layout_marginStart="144dp"
-        android:layout_marginTop="172dp"
+        android:layout_width="166dp"
+        android:layout_height="110dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="168dp"
+        android:fontFamily="@font/manrope_bold"
         android:gravity="center|center_horizontal|center_vertical"
         android:text="TextView"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,8 +82,11 @@
         android:layout_width="167dp"
         android:layout_height="111dp"
         android:layout_marginTop="168dp"
+        android:fontFamily="@font/manrope_bold"
         android:gravity="center|center_horizontal|center_vertical"
+        android:shadowColor="#FFFFFF"
         android:text="exerice is over"
+        android:textSize="30sp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.486"
@@ -73,6 +101,8 @@
         android:layout_marginTop="52dp"
         android:fontFamily="@font/manrope_bold"
         android:gravity="center|center_horizontal|center_vertical"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
