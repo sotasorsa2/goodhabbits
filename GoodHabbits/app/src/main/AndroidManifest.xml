@@ -28,6 +28,8 @@
         <activity android:name=".DayActivity"
             android:exported="false"
             />
+        <activity android:name=".night_activity"
+            />
         <activity
             android:name=".MainActivity"
             android:exported="true">
