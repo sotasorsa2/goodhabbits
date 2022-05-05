@@ -34,6 +34,8 @@
         <activity android:name=".stat_activity"
             android:exported="false"
             />
+        <activity android:name=".bedtime_activity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
