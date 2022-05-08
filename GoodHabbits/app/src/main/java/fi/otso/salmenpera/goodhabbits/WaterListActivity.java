@@ -9,9 +9,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
+/**
+ * Activity for displaying ListView of previous days water goals
+ * @author Atte Räisänen
+ */
 public class WaterListActivity extends AppCompatActivity {
     ListView waterListView;
+    /**
+     * Gets references to UI objects and runs function to populate Water List
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water_list);
@@ -21,6 +27,9 @@ public class WaterListActivity extends AppCompatActivity {
         populateWaterList();
     }
 
+    /**
+     * Takes each list item from ArrayList of WaterGoalForDate objects and displays it on ListView
+     */
     public void populateWaterList() {
         waterListView.setAdapter(new ArrayAdapter<WaterGoalForDate>(
         this,
@@ -45,6 +54,10 @@ public class WaterListActivity extends AppCompatActivity {
         });
     }
 
+
+    /**
+     * Goes back to WaterActivity
+     */
     public void goBack(View v) {
         Intent nextActivity = new Intent(WaterListActivity.this, WaterActivity.class);
         startActivity(nextActivity);

@@ -10,10 +10,17 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+/**
+ * Activity for displaying user's water goal stats from a certain previous day
+ * @author Atte Räisänen
+ */
 public class WaterDateActivity extends AppCompatActivity {
     TextView goalText, dateText, summaryText, percentageText;
     ImageView img;
     ProgressBar progressBar;
+    /**
+     * Gets goal data from specific date and displays it on the screen
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +46,10 @@ public class WaterDateActivity extends AppCompatActivity {
         }
     }
 
+
+    /**
+     * Go back to WaterListActivity
+     */
     public void goBack(View v) {
         Intent nextActivity = new Intent(WaterDateActivity.this, WaterListActivity.class);
         startActivity(nextActivity);

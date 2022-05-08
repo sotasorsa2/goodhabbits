@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- author: Atte Räisänen -->
+<!-- source: https://www.geeksforgeeks.org/how-to-implement-circular-progressbar-in-android/ -->
 <shape
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:innerRadiusRatio="2.5"

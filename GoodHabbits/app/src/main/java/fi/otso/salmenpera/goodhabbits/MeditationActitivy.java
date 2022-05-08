@@ -13,23 +13,22 @@ import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
-// for View
 
-//**
-/* This is the meditation activity for the application.
+/**
+    * This is the meditation activity for the application.
 * The activity is started when the user clicks the meditation button in the main activity.
 * The activity is closed when the user clicks the stop button.
 * The activity is closed when the user clicks the back button.
 *@author otso salmenperä
- */
+*/
 public class MeditationActitivy extends AppCompatActivity {
 
     TextView textView, txt2, over, medTimes;
     long startTime = 0;
     int times = 0;
     Button start;
-//**
-/* This is the onCreate method for the activity.
+/**
+ * This is the onCreate method for the activity.
  * initializes variables and views and buttons.
  * hides textView and txt2.
  */
@@ -57,8 +56,8 @@ public class MeditationActitivy extends AppCompatActivity {
 
 
 
-//**
-/* This is method is called when the user clicks the start button
+/**
+ * This is method is called when the user clicks the start button
  * starts the timer and shows the textView and txt2.
  * is main logic for the activity.
  */
@@ -131,8 +130,8 @@ public class MeditationActitivy extends AppCompatActivity {
 
 
 
-    //**
-    /* This method stops main meditation logic.
+    /**
+     * This method stops main meditation logic.
 
      */
 
@@ -140,10 +139,8 @@ public class MeditationActitivy extends AppCompatActivity {
         super.onPause();
         timeHandler.removeCallbacks(timeRunnable);
     }
-    //**
-    /* This method starts main meditation logic.
-
-
+    /**
+     This method starts main meditation logic.
      */
 
     public void onResume() {
@@ -155,8 +152,8 @@ public class MeditationActitivy extends AppCompatActivity {
 
 
 
-//**
-/* handles button clicks
+/**
+* handles button clicks
 * start button starts the timer and shows the textView and txt2.
 * stop button callables the onPause method and stops the timer.
 * Back button goes back to the main menu.
@@ -185,7 +182,7 @@ public class MeditationActitivy extends AppCompatActivity {
 
     }
 
-    //save times to shared preferences
+    /**save times to shared preferences*/
     public void saveTimes(View view) {
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -194,7 +191,7 @@ public class MeditationActitivy extends AppCompatActivity {
         Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
     }
 
-    //load times from shared preferences
+    /**load times from shared preferences*/
     public void loadTimes(View view) {
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         times = sharedPreferences.getInt("times", 0);

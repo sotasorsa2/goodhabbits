@@ -20,6 +20,10 @@ import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Main activity for the Water Tracker. Does everything from letting the user input how much water they drank to storing and saving data.
+ * @author Atte Räisänen
+ */
 public class WaterActivity extends AppCompatActivity {
     private TextView waterGoalView;
     private TextView percentageText;
@@ -33,6 +37,9 @@ public class WaterActivity extends AppCompatActivity {
     private ArrayList<String> drankWatersList = new ArrayList(); //List of previous days and how the user did
 
 
+    /**
+     * On create, intitialize variables for checking date and link variables to items on the screen
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +68,9 @@ public class WaterActivity extends AppCompatActivity {
         WaterList.getInstance().setWaterStatuses(convertDrankWatersListToWaterStatus());
     }
 
+    /**
+     * On pause, handle saving of data
+     */
     @Override
     protected void onPause() {
         super.onPause();
@@ -68,7 +78,9 @@ public class WaterActivity extends AppCompatActivity {
         handleDataSave();
     }
 
-    //Does today's date match last recorded date?
+    /**
+     * Returns true if the last seen date matches today's date, false if doesn't
+     */
     public Boolean lastSeenToday() {
         if(lastSeenDay != 0 && lastSeenMonth != 0 && lastSeenYear != 0) {
             if(Integer.parseInt(String.valueOf(cal.get(Calendar.YEAR))) > lastSeenYear || Integer.parseInt(String.valueOf(cal.get(Calendar.MONTH))) > lastSeenMonth || Integer.parseInt(String.valueOf(cal.get(Calendar.DAY_OF_MONTH))) > lastSeenDay) {
@@ -78,6 +90,9 @@ public class WaterActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Add 250mL of water to the water count
+     */
     public void add250ml(View v) {
         if(!waterOverMax(250)) {
             wg.addWaterDrank(250);
@@ -85,6 +100,10 @@ public class WaterActivity extends AppCompatActivity {
         }
     }
 
+
+    /**
+     * Add 500mL
+     */
     public void add500ml(View v) {
         if(!waterOverMax(500)) {
             wg.addWaterDrank(500);
@@ -92,6 +111,9 @@ public class WaterActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Add 1000mL of water to the water count
+     */
     public void add1000ml(View v) {
         if(!waterOverMax(1000)) {
             wg.addWaterDrank(1000);
@@ -100,6 +122,11 @@ public class WaterActivity extends AppCompatActivity {
     }
 
 
+
+
+    /**
+     * Add a custom amount of water based on EditText input
+     */
     public void addCustomWater(View v) {
         if(waterAmountText.getText().length() > 0) { //Check to prevent crash when EditText field is empty
             int waterAmountToAdd = Integer.parseInt(String.valueOf(waterAmountText.getText()));
@@ -110,7 +137,11 @@ public class WaterActivity extends AppCompatActivity {
         }
     }
 
-    //Does the water amount we're trying to add make drank water go above 10000?
+
+
+    /**
+     * Return true if water we're trying to add makes drank water amount go over 10000, false if doesn't
+     */
     private Boolean waterOverMax(int add) {
         if(wg.getDrank() + add >= 10000) {
             return true;
@@ -119,7 +150,9 @@ public class WaterActivity extends AppCompatActivity {
         }
     }
 
-    //Save variable values into SharedPreferences to be loaded next time
+    /**
+     * Save variable values into SharedPreferences
+     */
     public void handleDataSave() {
         SharedPreferences prefPut = getSharedPreferences("waterDrank", Activity.MODE_PRIVATE);
         SharedPreferences.Editor prefEditor = prefPut.edit();
@@ -131,8 +164,9 @@ public class WaterActivity extends AppCompatActivity {
         prefEditor.putInt("lastDay", Integer.parseInt(String.valueOf(cal.get(Calendar.DAY_OF_MONTH))));
         prefEditor.commit();
     }
-
-    //Add results for the day to drank waters list and update SharedPreferences with the new list
+    /**
+     * Add results for the day to drank waters list and update SharedPreferences with the new list
+     */
     public void handleWaterListSave() {
         Log.d("function call", "handleWaterListSave()");
         String s = String.valueOf(lastSeenYear) + "," + Integer.toString(lastSeenMonth) + "," + String.valueOf(lastSeenDay) + "," + Integer.toString(wg.getDrank()) + "," + Integer.toString(wg.getGoal());
@@ -146,7 +180,9 @@ public class WaterActivity extends AppCompatActivity {
         prefEditor.commit();
     }
 
-    //Load SharedPreferences into variables
+    /**
+     * Load values from SharedPreferences into variables
+     */
     public void handleDataLoad() {
         Log.d("function call", "handleDataLoad()");
         SharedPreferences prefGet = getSharedPreferences("waterDrank", Activity.MODE_PRIVATE);
@@ -164,6 +200,10 @@ public class WaterActivity extends AppCompatActivity {
         lastSeenDay = prefGet.getInt("lastDay", 0);
     }
 
+
+    /**
+     * Update the text for water goal
+     */
     public void updateGoalText() {
         waterGoalView.setText(Integer.toString(wg.getDrank()) + "ml/" + Integer.toString(wg.getGoal()) + "ml");
         progressBar.setProgress(wg.getPercentage());
@@ -171,6 +211,10 @@ public class WaterActivity extends AppCompatActivity {
         updateWaterImage();
     }
 
+
+    /**
+     * If daily goal has been reached, update water glass image
+     */
     public void updateWaterImage() {
         if(wg.getDrank() >= wg.getGoal()) {
             waterImageId = R.drawable.water_full;
@@ -180,17 +224,10 @@ public class WaterActivity extends AppCompatActivity {
         waterImageView.setImageResource(waterImageId);
     }
 
-    //For debugging, clears all SharedPreferences
-    public void resetPrefs() {
-        Log.d("function call", "WaterActivity.resetPrefs()");
-        Log.d("INFO", "CLEARING ALL SHARED PREFERENCES");
-        SharedPreferences prefGet = getSharedPreferences("waterDrank", Activity.MODE_PRIVATE);
-        SharedPreferences.Editor prefEditor = prefGet.edit();
-        prefEditor.clear();
-        prefEditor.commit();
-    }
-
-    //Converts drankWatersList from String type to WaterStatus type
+    /**
+     * Converts DrankWatersList to WaterStatus<br>
+     * Comment after presentation: Didn't realize Sqlite was included in the libraries, wasn't sure if we were allowed to use databases so I made a whole system converting WaterGoalForDate into String array for storage and back into class on load
+     */
     public ArrayList<WaterGoalForDate> convertDrankWatersListToWaterStatus() {
         Log.d("function call", "convertDrankWatersListToWaterStatus()");
         ArrayList result = new ArrayList(); //Initialize Array to return
@@ -220,11 +257,17 @@ public class WaterActivity extends AppCompatActivity {
         return result;
     }
 
+    /**
+     * Go back to MainActivity
+     */
     public void goBack(View v) {
         Intent nextActivity = new Intent(WaterActivity.this, MainActivity.class);
         startActivity(nextActivity);
     }
 
+    /**
+     * Open Activity for list of previous days water goals
+     */
     //Load activity for previous water goals
     public void loadWaterListActivity(View v) {
         Intent nextActivity = new Intent(WaterActivity.this, WaterListActivity.class);
