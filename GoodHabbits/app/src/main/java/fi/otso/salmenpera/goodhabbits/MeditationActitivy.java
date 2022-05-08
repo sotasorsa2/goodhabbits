@@ -15,19 +15,24 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 // for View
 
-
+//**
+/* This is the meditation activity for the application.
+* The activity is started when the user clicks the meditation button in the main activity.
+* The activity is closed when the user clicks the stop button.
+* The activity is closed when the user clicks the back button.
+*@author otso salmenperä
+ */
 public class MeditationActitivy extends AppCompatActivity {
 
     TextView textView, txt2, over, medTimes;
     long startTime = 0;
     int times = 0;
-
-
-
-
-
     Button start;
-
+//**
+/* This is the onCreate method for the activity.
+ * initializes variables and views and buttons.
+ * hides textView and txt2.
+ */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +57,11 @@ public class MeditationActitivy extends AppCompatActivity {
 
 
 
-
+//**
+/* This is method is called when the user clicks the start button
+ * starts the timer and shows the textView and txt2.
+ * is main logic for the activity.
+ */
 
    Handler timeHandler = new Handler();
 
@@ -122,11 +131,20 @@ public class MeditationActitivy extends AppCompatActivity {
 
 
 
+    //**
+    /* This method stops main meditation logic.
+
+     */
 
     public void onPause() {
         super.onPause();
         timeHandler.removeCallbacks(timeRunnable);
     }
+    //**
+    /* This method starts main meditation logic.
+
+
+     */
 
     public void onResume() {
         super.onResume();
@@ -134,18 +152,16 @@ public class MeditationActitivy extends AppCompatActivity {
         timeHandler.postDelayed(timeRunnable, 0);
     }
 
-    public void start(View view) {
-        startTime = System.currentTimeMillis();
-        timeHandler.postDelayed(timeRunnable, 0);
-
-    }
-
-    public void stop(){
-        timeHandler.removeCallbacks(timeRunnable);
-    }
 
 
 
+//**
+/* handles button clicks
+* start button starts the timer and shows the textView and txt2.
+* stop button callables the onPause method and stops the timer.
+* Back button goes back to the main menu.
+
+ */
     public void onClick(View v) {
         if(v.getId() == R.id.start) {
 
@@ -156,15 +172,11 @@ public class MeditationActitivy extends AppCompatActivity {
             startTime = System.currentTimeMillis();
             timeHandler.postDelayed(timeRunnable, 0);
             times++;
-
-
-
-
         }
         if(v.getId() == R.id.stop) {
             onPause();
         }
-        if(v.getId() == R.id.Back) {
+        if(v.getId() == R.id.Back ) {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }
