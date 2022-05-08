@@ -28,6 +28,14 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
+/**
+ *Day activity for bed time app.
+ * <p>
+ *     In the bed activity the user can chose a bad time, Just like an alarm so when the time comes to sleep
+ *     the user can go to the main face of the app then can click Sleep Now button to start user's tracking sleep.
+ * </p>
+ * @author Oumran
+ */
 
 public class bedtime_activity extends AppCompatActivity {
     TimePicker myTimePicker;
@@ -38,7 +46,10 @@ public class bedtime_activity extends AppCompatActivity {
     Button btnStart, btnStop;
     TextView textViewTime, bedTimeGoal;
     CounterClass timer;
-
+    /**
+     *On create, initialize variables for buttons and finding them to activate them
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +86,11 @@ public class bedtime_activity extends AppCompatActivity {
             }
         });
     }
+    /**
+     *Open time picker dialog, initialize a customize  the clock Style, Because the UI style list there is no
+      valid look, So we made this one.
+     *
+     */
 
     private void openTimePickerDialog(boolean is24r) {
         Calendar calendar = Calendar.getInstance();
@@ -94,6 +110,13 @@ public class bedtime_activity extends AppCompatActivity {
 
     TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
         @Override
+        /**
+         *On time set, its for initializing the exact time hour by hour and minute by minute and second by second
+         * this one has a different time then the system time, It works in milliSeconds, So that we can notice
+          that the exact second for sleep has came, then we increase the system time  which works in seconds only,
+          The timer will stop counting time when it reaches 0, Because it doesn't work in milliseconds.
+         *
+         */
         public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
             timer = new CounterClass((minute * 60 * 1000) + (hourOfDay * 60 * 60 * 1000), 1000);
             long millis = (minute * 60 * 1000) + (hourOfDay * 60 * 60 * 1000);
@@ -148,6 +171,11 @@ public class bedtime_activity extends AppCompatActivity {
 
         //@androidx.annotation.RequiresApi(api = Build.VERSION_CODES.O)
         @Override
+        /**
+         *On tick, initialize the time to increase second by second, And initialize the exact time of the system and increase
+          it in the right way.
+         *
+         */
         public void onTick(long millisUntilFinished) {
             long millis = millisUntilFinished;
             System.out.println("Millis: " + millis);
@@ -184,6 +212,11 @@ public class bedtime_activity extends AppCompatActivity {
         }
 
         @Override
+        /**
+         *On finish, it is for initializing the time to stop at (00:00:00), So the user knows that hes bed time has came,
+         *  And it been called in on tick time done part.
+         *
+         */
         public void onFinish() {
             if (textViewTime.equals(00)) {
                 textViewTime.setText("00:00:00");
