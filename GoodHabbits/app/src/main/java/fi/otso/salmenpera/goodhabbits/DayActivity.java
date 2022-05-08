@@ -13,22 +13,26 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- *
+ *Day activity for sleep tracking app.
+ * <p>
+ *     In the day activity user can click Sleep Now button to start user's tracking sleep.
+ * </p>
+ * @author Hasan
  */
-
 public class DayActivity extends AppCompatActivity {
     private Button sleepButton, bedTimeGoalBtn;
     private TextView timeday;
     SharedPreferences tracking;
     SharedPreferences.Editor ed;
 
-
+/**
+ *On create, initialize variables for checking date and time
+ *
+ */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day);
-
-
 
         //setting up current date
         timeday = findViewById(R.id.timeday);
@@ -36,16 +40,14 @@ public class DayActivity extends AppCompatActivity {
         String stringDate = DateFormat.getDateInstance().format(currentlyDate);
         timeday.setText(stringDate);
 
-
         //calling the button id
         sleepButton = findViewById(R.id.sleepbtn);
         bedTimeGoalBtn = findViewById(R.id.bedTimeGoalBtn);
-
         sleepButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-
+                //SharedPreferences
                 SharedPreferences tracking = getSharedPreferences("tracking", MODE_PRIVATE);
                 ed = tracking.edit();
 
@@ -59,13 +61,12 @@ public class DayActivity extends AppCompatActivity {
                 ed.putString("counting", formatter.format(storeDate));
                 ed.apply();
 
+                //redirecting to new activity if the Sleep Now is clicked
                 Intent nightActivity = new Intent(DayActivity.this, night_activity.class);
                 startActivity(nightActivity);
 
             }
         });
-
-
         //bed Time Goal
         bedTimeGoalBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +75,5 @@ public class DayActivity extends AppCompatActivity {
                 startActivity(bedtimeActivity);
             }
         });
-
-
     }
 }

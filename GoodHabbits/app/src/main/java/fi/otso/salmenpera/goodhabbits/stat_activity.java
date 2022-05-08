@@ -1,5 +1,5 @@
 package fi.otso.salmenpera.goodhabbits;
-
+//import statement
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,6 +14,11 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Main activity for sleep analysis, in this page user can see how well the user slept and when he went to sleep and when he woke up.
+ * @author Hasan
+ */
+
 public class stat_activity extends AppCompatActivity {
     Button backToHome;
     SharedPreferences tracking;
@@ -21,6 +26,10 @@ public class stat_activity extends AppCompatActivity {
     TextView dateStat, wentToSleep, wakeUp, percentageAnalys;
     ProgressBar progressBar;
 
+
+    /**
+     *On create, getting the status and initUI
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +39,8 @@ public class stat_activity extends AppCompatActivity {
         initUI();
         getStatus();
         backToHome = findViewById(R.id.backtohome);
+
+        //redirect button to Home page
         backToHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,11 +51,17 @@ public class stat_activity extends AppCompatActivity {
         });
     }
 
+    /**
+     *getStatus gets the current time, stored date. setting up the progress bar and if statement that the percentage should not go over 100%.
+     */
     private void getStatus(){
+        //SharedPreferences
         SharedPreferences tracking = getSharedPreferences("tracking", MODE_PRIVATE);
         ed = tracking.edit();
+        //Current date
         Date currentDate = new Date();
         dateStat.setText(DateFormat.getDateInstance().format(currentDate));
+        //date and time format
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd/HH/mm/ss");
         SimpleDateFormat displayTime = new SimpleDateFormat("HH:mm:ss");
         try {
@@ -76,6 +93,7 @@ public class stat_activity extends AppCompatActivity {
                 percentageAnalys.setText(percent + "%");
             }
 
+            //set went to sleep
             wentToSleep.setText(displayTime.format(storeDate));
             wakeUp.setText(displayTime.format(currentDate));
 
@@ -88,6 +106,11 @@ public class stat_activity extends AppCompatActivity {
         }
 
     }
+
+    /**
+     *initUI, initialize variables
+     */
+
     public void initUI(){
         dateStat = findViewById(R.id.datestat);
         wentToSleep = findViewById(R.id.wenttosleep);
