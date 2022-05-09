@@ -21,9 +21,6 @@
         <activity
             android:name=".MeditationActitivy"
             android:exported="false" />
-        <activity
-            android:name=".SleepActivity"
-            android:exported="false" />
 
         <activity android:name=".DayActivity"
             android:exported="false"
